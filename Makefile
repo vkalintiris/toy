@@ -16,4 +16,4 @@ parser: parser.y
 	bison -d parser.y
 
 clean:
-	rm lex.yy.c parser.tab.c parser.tab.h scanner
+	rm -r -f lex.yy.c parser.tab.c parser.tab.h scanner scanner.dSYM
