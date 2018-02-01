@@ -1,0 +1,218 @@
+{
+    "ast_translation_unit": {
+        "ast_statement_list": [
+            {
+                "ast_declaration": {
+                    "identifier": "a",
+                    "type": "int"
+                }
+            },
+            {
+                "ast_declaration": {
+                    "identifier": "b",
+                    "type": "int"
+                }
+            },
+            {
+                "ast_declaration": {
+                    "identifier": "c",
+                    "type": "int"
+                }
+            },
+            {
+                "ast_expression": {
+                    "expression": {
+                        "ast_expression": {
+                            "type": "int_constant",
+                            "value": 100
+                        }
+                    },
+                    "identifier": "a",
+                    "type": "assign"
+                }
+            },
+            {
+                "ast_expression": {
+                    "expression": {
+                        "ast_expression": {
+                            "type": "int_constant",
+                            "value": 1000
+                        }
+                    },
+                    "identifier": "b",
+                    "type": "assign"
+                }
+            },
+            {
+                "ast_expression": {
+                    "expression": {
+                        "ast_expression": {
+                            "type": "int_constant",
+                            "value": 0
+                        }
+                    },
+                    "identifier": "sum",
+                    "type": "assign"
+                }
+            },
+            {
+                "ast_declaration": {
+                    "identifier": "midpoint",
+                    "type": "int"
+                }
+            },
+            {
+                "ast_expression": {
+                    "expression": {
+                        "ast_expression": {
+                            "expressions": [
+                                {
+                                    "ast_expression": {
+                                        "expressions": [
+                                            {
+                                                "ast_expression": {
+                                                    "type": "identifier",
+                                                    "value": "a"
+                                                }
+                                            },
+                                            {
+                                                "ast_expression": {
+                                                    "type": "identifier",
+                                                    "value": "b"
+                                                }
+                                            }
+                                        ],
+                                        "type": "add"
+                                    }
+                                },
+                                {
+                                    "ast_expression": {
+                                        "type": "int_constant",
+                                        "value": 2
+                                    }
+                                }
+                            ],
+                            "type": "div"
+                        }
+                    },
+                    "identifier": "midpoint",
+                    "type": "assign"
+                }
+            },
+            {
+                "ast_while_statement": {
+                    "body": {
+                        "ast_compound_statement": {
+                            "ast_statement_list": [
+                                {
+                                    "ast_selection_statement": {
+                                        "condition": {
+                                            "ast_expression": {
+                                                "expressions": [
+                                                    {
+                                                        "ast_expression": {
+                                                            "type": "identifier",
+                                                            "value": "b"
+                                                        }
+                                                    },
+                                                    {
+                                                        "ast_expression": {
+                                                            "type": "identifier",
+                                                            "value": "midpoint"
+                                                        }
+                                                    }
+                                                ],
+                                                "type": "gt"
+                                            }
+                                        },
+                                        "else_body": {
+                                            "ast_compound_statement": {
+                                                "ast_statement_list": [
+                                                    {
+                                                        "ast_expression": {
+                                                            "expression": {
+                                                                "ast_expression": {
+                                                                    "expressions": [
+                                                                        {
+                                                                            "ast_expression": {
+                                                                                "type": "identifier",
+                                                                                "value": "c"
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "ast_expression": {
+                                                                                "type": "identifier",
+                                                                                "value": "b"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "type": "add"
+                                                                }
+                                                            },
+                                                            "identifier": "c",
+                                                            "type": "assign"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "then_body": {
+                                            "ast_compound_statement": {
+                                                "ast_statement_list": [
+                                                    {
+                                                        "ast_expression": {
+                                                            "expression": {
+                                                                "ast_expression": {
+                                                                    "expressions": [
+                                                                        {
+                                                                            "ast_expression": {
+                                                                                "type": "identifier",
+                                                                                "value": "c"
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "ast_expression": {
+                                                                                "type": "identifier",
+                                                                                "value": "b"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "type": "add"
+                                                                }
+                                                            },
+                                                            "identifier": "c",
+                                                            "type": "assign"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "condition": {
+                        "ast_expression": {
+                            "expressions": [
+                                {
+                                    "ast_expression": {
+                                        "type": "identifier",
+                                        "value": "b"
+                                    }
+                                },
+                                {
+                                    "ast_expression": {
+                                        "type": "identifier",
+                                        "value": "a"
+                                    }
+                                }
+                            ],
+                            "type": "gt"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

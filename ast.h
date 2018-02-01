@@ -132,6 +132,6 @@ void
 print_node(struct ast_node *node);
 
 void
-dump_ast_json(struct ast_translation_unit *node);
+dump_ast(struct ast_node *node);
 
 #endif /* AST_H */
