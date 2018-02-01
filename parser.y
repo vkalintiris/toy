@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ast.h"
-#include "driver.h"
 
 void yyerror(char *s);
 
@@ -75,8 +74,6 @@ void yyerror(char *s);
  /* rule that matches a translation unit (aka. a source file) */
 translation_unit: statement_list {
    $$ = create_translation_unit($1);
-   // print_node((struct ast_node *) $$);
-   //ast_to_llvm($$);
   dump_ast($$);
 }
 ;
