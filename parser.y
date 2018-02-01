@@ -76,7 +76,8 @@ void yyerror(char *s);
 translation_unit: statement_list {
    $$ = create_translation_unit($1);
    // print_node((struct ast_node *) $$);
-   ast_to_llvm($$);
+   //ast_to_llvm($$);
+  dump_ast_json($$);
 }
 ;
 

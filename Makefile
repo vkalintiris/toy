@@ -1,12 +1,12 @@
 all: scanner
 
 scanner: parser lexer
-	clang -Wall -o scanner ast.c print.c \
+	clang -Wall -o scanner ast.c print.c print_json.c \
 	symtab.c vm_state.c vm_value.c driver.c \
 	lex.yy.c parser.tab.c \
 	-L/usr/local/opt/flex/lib -I/usr/local/opt/flex/include -lfl \
 	-lstdc++ \
-	`pkg-config --cflags --libs glib-2.0 zlib` \
+	`pkg-config --cflags --libs  glib-2.0 zlib json-glib-1.0` \
 	`llvm-config --cflags --ldflags --libs --system-libs core analysis`
 
 lexer: lexer.l

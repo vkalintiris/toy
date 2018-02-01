@@ -131,4 +131,7 @@ create_translation_unit(struct ast_statement_list *statement_list);
 void
 print_node(struct ast_node *node);
 
+void
+dump_ast_json(struct ast_translation_unit *node);
+
 #endif /* AST_H */
