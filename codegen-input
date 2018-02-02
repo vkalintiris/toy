@@ -1,0 +1,18 @@
+int a;
+int b;
+int c;
+
+a = 100;
+b = 1000;
+
+int midpoint;
+
+midpoint = (a + b) / 2;
+
+while (b > a) {
+  if (b > midpoint) {
+    c = c + b;
+  } else {
+    c = a - c;
+  }
+}

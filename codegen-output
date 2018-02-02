@@ -1,0 +1,56 @@
+; ModuleID = 'Toy'
+source_filename = "Toy"
+
+define void @main() {
+entry:
+  %a = alloca i32
+  %b = alloca i32
+  %c = alloca i32
+  store i32 100, i32* %a
+  store i32 1000, i32* %b
+  %midpoint = alloca i32
+  %0 = load i32, i32* %a
+  %1 = load i32, i32* %b
+  %2 = add i32 %0, %1
+  %3 = sdiv i32 %2, 2
+  store i32 %3, i32* %midpoint
+  br label %while_condition
+
+while_condition:                                  ; preds = %if_merge, %entry
+  %4 = load i32, i32* %b
+  %5 = load i32, i32* %a
+  %6 = icmp sgt i32 %4, %5
+  br i1 %6, label %while_body, label %while_merge
+
+while_body:                                       ; preds = %while_condition
+  br label %if_condition
+
+while_merge:                                      ; preds = %while_condition
+  br label %ret
+
+ret:                                              ; preds = %while_merge
+  ret void
+
+if_condition:                                     ; preds = %while_body
+  %7 = load i32, i32* %b
+  %8 = load i32, i32* %midpoint
+  %9 = icmp sgt i32 %7, %8
+  br i1 %9, label %then_body, label %else_body
+
+then_body:                                        ; preds = %if_condition
+  %10 = load i32, i32* %c
+  %11 = load i32, i32* %b
+  %12 = add i32 %10, %11
+  store i32 %12, i32* %c
+  br label %if_merge
+
+else_body:                                        ; preds = %if_condition
+  %13 = load i32, i32* %a
+  %14 = load i32, i32* %c
+  %15 = sub i32 %13, %14
+  store i32 %15, i32* %c
+  br label %if_merge
+
+if_merge:                                         ; preds = %else_body, %then_body
+  br label %while_condition
+}
